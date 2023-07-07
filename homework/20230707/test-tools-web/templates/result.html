@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>调试结果</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 600px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>调试结果</h2>
+
+    <h2>Scatter Plot 1</h2>
+    <img src="{{ ori_scatter }}" alt="Scatter Plot 1">
+
+    <h2>Scatter Plot 2</h2>
+    <img src="{{ rotated_scatter }}" alt="Scatter Plot 2">
+
+    <h2>Histogram 1</h2>
+    <img src="{{ ori_hist }}" alt="Histogram 1">
+
+    <h2>Histogram 2</h2>
+    <img src="{{ rotated_hist }}" alt="Histogram 2">
+</body>
+</html>
