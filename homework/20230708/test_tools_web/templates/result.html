@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>调试结果</title>
+    <!-- <link
+      rel="stylesheet"
+      href="../static/css/style.css"
+    /> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 10px;
+        }
+
+        h1,
+        h2 {
+            color: #333;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 400px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .column {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .column:last-child {
+            margin-right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>调试结果</h2>
+
+    <div class="row">
+        <div class="column">
+            <h2>原始散点图</h2>
+            <img src="{{ ori_scatter }}" alt="Scatter Plot 1">
+        </div>
+        <div class="column">
+            <h2>旋转后散点图</h2>
+            <img src="{{ rotated_scatter }}" alt="Scatter Plot 2">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h2>原始X轴直方图</h2>
+            <img src="{{ ori_hist_X }}" alt="Histogram 1">
+        </div>
+        <div class="column">
+            <h2>原始Y轴直方图</h2>
+            <img src="{{ ori_hist_Y }}" alt="Histogram 2">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h2>旋转后X轴直方图</h2>
+            <img src="{{ rotated_hist_X }}" alt="Histogram 3">
+        </div>
+        <div class="column">
+            <h2>旋转后Y轴直方图</h2>
+            <img src="{{ rotated_hist_Y }}" alt="Histogram 4">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="column">
+            <h2>旋转+平滑后X轴直方图</h2>
+            <img src="{{ filered_hist_X }}" alt="Histogram 5">
+        </div>
+        <div class="column">
+            <h2>旋转+平滑后Y轴直方图</h2>
+            <img src="{{ filered_hist_Y }}" alt="Histogram 6">
+        </div>
+    </div>
+
+</body>
+
+</html>

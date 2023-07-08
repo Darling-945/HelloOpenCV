@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>调试工具</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <style>
+        /* 自定义样式 */
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+        }
+
+        .form-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .submit-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        // JavaScript 代码
+        window.addEventListener('DOMContentLoaded', function() {
+            // 获取表单元素
+            var angleInput = document.getElementById('angle');
+            var stepSizeInput = document.getElementById('step_size');
+            var winsizeinput = document.getElementById('window_size');
+
+            // 设置输入验证
+            angleInput.addEventListener('input', function() {
+                var value = this.value;
+                if (isNaN(value)) {
+                    this.setCustomValidity('Please enter a valid number for angle.');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
+            stepSizeInput.addEventListener('input', function() {
+                var value = this.value;
+                if (isNaN(value)) {
+                    this.setCustomValidity('Please enter a valid number for step size.');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+
+            winsizeinput.addEventListener('input', function() {
+                var value = this.value;
+                if (isNaN(value)) {
+                    this.setCustomValidity('Please enter a valid number for window size.');
+                } else {
+                    this.setCustomValidity('');
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="form-container">
+                    <h2 class="form-title">调试页面</h2>
+                    <form action="/upload" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="angle">输入角度：（输入“0”则不旋转）</label>
+                            <input type="number" id="angle" name="angle" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="file">CSV文件：</label>
+                            <input type="file" id="file" name="file" class="form-control-file" accept=".csv,.xls,.xlsx" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="step_size">平滑步长：（输入“0”则不平滑）</label>
+                            <input type="number" id="step_size" name="step_size" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="window_size">平滑窗口大小：（输入“0”则不平滑）</label>
+                            <input type="number" id="window_size" name="window_size" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="smoothi_alg">平滑算法选择</label>
+                            <select id="smoothi_alg" name="smoothi_alg" class="form-control">
+                                <option value="mean">均值滤波</option>
+                                <option value="median">中值滤波</option>
+                            </select>
+                        </div>
+                        <div class="submit-button">
+                            <button type="submit" class="btn btn-primary">开始</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</body>
+</html>
